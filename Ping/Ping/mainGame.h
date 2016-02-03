@@ -4,6 +4,7 @@
 #include "paddlePlayer.h"
 #include "ball.h"
 #include "score.h"
+#include "paddleAI.h"
 
 
 class mainGame : public tinyState
@@ -15,7 +16,7 @@ public:
 	void Destroy(sf::RenderWindow* window);
 private:
 	paddlePlayer* player1;
-	paddlePlayer* player2;
+	paddleAI* player2;
 	ball* ballObject;
 	Score* score1;
 	Score* score2;

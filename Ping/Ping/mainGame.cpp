@@ -12,12 +12,11 @@ void mainGame::Initialize(sf::RenderWindow* window)
 	this->score1->setPosition(window->getSize().x - this->score1->getGlobalBounds().width, 0);
 
 	this->player1 = new paddlePlayer(0);
-	
-
-	this->player2 = new paddlePlayer(1);
-	
+	this->player2 = new paddleAI(1);
 
 	this->ballObject = new ball(this->score1, this->score2, this->player1, this->player2);
+	this->player2->SetBall(this->ballObject);
+
 	this->ballObject->Reset(window);
 
 
@@ -50,5 +49,6 @@ void mainGame::Destroy(sf::RenderWindow* window)
 	delete this->ballObject;
 	delete this->score1;
 	delete this->score2;
+	delete this->font;
 
 }
