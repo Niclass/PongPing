@@ -1,8 +1,16 @@
-#include <SFML/Window.hpp>
+#include "gameState.h"
+#include "mainMenu.h"
+
+gameState coreState;
+bool quitGame = false;
 
 int main()
 {
-	sf::Window window(sf::VideoMode(800, 600), "My window");
+	sf::RenderWindow window(sf::VideoMode(1280, 720), "PongPing");
+
+	tinyState state;
+	coreState.SetWindow(&window);
+	coreState.SetState(new mainMenu());
 
 	// run the program as long as the window is open
 	while (window.isOpen())
@@ -14,6 +22,17 @@ int main()
 			// "close requested" event: we close the window
 			if (event.type == sf::Event::Closed)
 				window.close();
+		}
+
+		window.clear(sf::Color::Black);
+		coreState.Update();
+		coreState.Render();
+
+		window.display();
+
+		if (quitGame)
+		{
+			window.close();
 		}
 	}
 

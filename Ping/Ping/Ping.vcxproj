@@ -69,6 +69,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="mainGame.cpp" />
+    <ClCompile Include="mainMenu.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="gameState.h" />
+    <ClInclude Include="mainGame.h" />
+    <ClInclude Include="mainMenu.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
