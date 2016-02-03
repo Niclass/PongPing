@@ -1,12 +1,13 @@
 #include <iostream>
 #include "mainMenu.h"
+#include "mainGame.h"
 
 void mainMenu::Initialize(sf::RenderWindow* window)
 {
 	this->selected = 0;
 
 	this->font = new sf::Font();
-	this->font->loadFromFile("font.ttf");
+	this->font->loadFromFile("Graphics/font.ttf");
 	this->title = new sf::Text("PongPing", *this->font, 256U);
 	this->title->setOrigin(this->title->getGlobalBounds().width / 2, this->title->getGlobalBounds().height / 2);
 	this->title->setPosition(window->getSize().x / 2, window->getSize().y / 8);
@@ -44,6 +45,7 @@ void mainMenu::Update(sf::RenderWindow* window)
 		switch (this->selected)
 		{
 		case 0:
+			coreState.SetState(new mainGame());
 			break;
 		case 1:
 			quitGame = true;
@@ -77,4 +79,6 @@ void mainMenu::Destroy(sf::RenderWindow* window)
 {
 	delete this->font;
 	delete this->title;
+	delete this->play;
+	delete this->quit;
 }

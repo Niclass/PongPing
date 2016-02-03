@@ -9,8 +9,6 @@ public:
 	void Update(sf::RenderWindow* window);
 	void Render(sf::RenderWindow* window);
 	void Destroy(sf::RenderWindow* window);
-
-	~mainMenu();
 private:
 	sf::Font* font;
 	sf::Text* title;
