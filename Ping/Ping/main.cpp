@@ -1,3 +1,4 @@
+#include <Windows.h>
 #include "gameState.h"
 #include "mainMenu.h"
 
@@ -34,6 +35,7 @@ int main()
 		{
 			window.close();
 		}
+		Sleep(3);
 	}
 
 	return 0;

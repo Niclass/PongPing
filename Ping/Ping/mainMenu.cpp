@@ -53,6 +53,7 @@ void mainMenu::Update(sf::RenderWindow* window)
 		}
 	}
 
+
 	this->upKey = sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up);
 	this->downKey = sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down);
 }

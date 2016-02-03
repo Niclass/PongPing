@@ -5,33 +5,9 @@
 class paddlePlayer : public Entity
 {
 public:
-	paddlePlayer(int playerNumber)
-	{
-		this->playerNumber = playerNumber;
-		switch (this->playerNumber)
-		{
-		case 0:
-			this->Load("paddle1.png");
-			break;
-		default:
-			this->Load("paddle2.png");
-			break;
-		}
-	}
-	void Update()
-	{
-		switch (this->playerNumber)
-		{
-		case 0:
-			this->velocity.y = sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S) - sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W);
-			break;
-		default:
-			this->velocity.y = sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down) - sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up);
-			break;
-		}
-		
-		Entity::Update();
-	}
+	paddlePlayer(int playerNumber);
+	void Update();
+	
 private:
 	int playerNumber;
 };
